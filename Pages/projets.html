@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Dieuveil NGAKOSSO</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">DN</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="projets.html" class="active">Projets</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Mes Projets</h1>
+            <p>Découvre les projets sur lesquels j'ai travaillé</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Recherche par technologies (Arduino, C, Réseau, MySQL...)">
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="projects-grid-full">
+                <!-- Projet 1 : Poubelle Automatique (Arduino) -->
+                <div class="project-card-full">
+                    <div class="project-image-full" style="background: url('/Images/kit-arduino-diy-poubelle-automatique-snar46.jpg') center/contain no-repeat; background-color: #1e293b;"></div>
+                    <div class="project-info">
+                        <h3>Poubelle Automatique</h3>
+                        <p>
+                            Conception et programmation d'une poubelle automatique utilisant Arduino. Le projet inclut un capteur de distance pour détecter la présence d'un objet, ce qui déclenche l'ouverture automatique du couvercle via un servomoteur. Une solution innovante et pratique pour une gestion hygiénique des déchets.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Capteurs</span>
+                            <span class="tech-tag">Servomoteur</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link" target="_blank">Voir le projet →</a>
+                            <a href="#" class="btn-link" target="_blank">Code GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 : Gestion Base de Données (C + MySQL) -->
+                <div class="project-card-full">
+                    <div class="project-image-full" style="background: url('/Images/16108543285909_image6.png') center/contain no-repeat; background-color: #1e293b;"></div>
+                    <div class="project-info">
+                        <h3>Gestion de Base de Données</h3>
+                        <p>
+                            Développement d'une application en langage C permettant de gérer une base de données MySQL. Le projet inclut les opérations CRUD (Create, Read, Update, Delete) avec une interface en ligne de commande. Utilisation des bibliothèques MySQL pour la connexion et l'exécution des requêtes SQL.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bibliothèques MySQL</span>
+                            <span class="tech-tag">CRUD</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link" target="_blank">Voir le projet →</a>
+                            <a href="#" class="btn-link" target="_blank">Code GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 : Simulation Réseau -->
+                <div class="project-card-full">
+                    <div class="project-image-full" style="background: url('/Images/image-25.png') center/contain no-repeat; background-color: #1e293b;"></div>
+                    <div class="project-info">
+                        <h3>Simulation d'un Réseau</h3>
+                        <p>
+                            Conception et simulation d'une infrastructure réseau complète incluant la configuration des routeurs, la mise en place de routes statiques et l'implémentation d'access lists (ACL) pour le filtrage du trafic. Le projet démontre ma compréhension des protocoles de routage, de la sécurité réseau et de la gestion du trafic inter-domaines.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Routage</span>
+                            <span class="tech-tag">Routes Statiques</span>
+                            <span class="tech-tag">Access Lists</span>
+                            <span class="tech-tag">Cisco IOS</span>
+                            <span class="tech-tag">Simulation Réseau</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link" target="_blank">Voir le projet →</a>
+                            <a href="#" class="btn-link" target="_blank">Code GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Dieuveil NGAKOSSO. Tous droits réservés.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction de recherche par technologies
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const projects = document.querySelectorAll('.project-card-full');
+            
+            projects.forEach(project => {
+                const technologies = project.textContent.toLowerCase();
+                if (technologies.includes(searchTerm)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
